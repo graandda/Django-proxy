@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section style="flex: 1 1 0;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-centered">
+        <h2>Dashboard</h2>
+                <table class="table table-striped w-100 d-block d-md-table">
+            <thead>
+                <th>Site</th>
+                <th>Page views</th>
+                <th>Data downloaded</th>
+                <th>Data uploaded</th>
+            </thead>
+            <tbody>
+                {% for site_data in traffic_data %}
+                <tr>
+                    <td>{{ site_data.site }}</td>
+                    <td>{{ site_data.page_views }}</td>
+                    <td>{{ site_data.data_uploaded }} bytes</td>
+                    <td>{{ site_data.data_downloaded }} bytes</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+
+
+

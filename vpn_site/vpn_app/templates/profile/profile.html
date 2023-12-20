@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+  <section style="flex: 1 1 0;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-centered">
+          <h2>Особистий кабінет</h2>
+          <p>Вітаємо, {{ user.username }}!</p>
+        </div>
+        <div style="margin: auto;" class="col-md-6 col-centered">
+          <form method="post"  enctype="multipart/form-data" >
+            {% csrf_token %}
+            {{form|crispy}}
+            <button type="submit" class="btn btn-primary">Update</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

@@ -1,0 +1,14 @@
+<table class="table table-striped w-100 d-block d-md-table">
+    <thead>
+        <th>Name</th>
+        <th>URL</th>
+        <th>USE VPN</th>
+        <th>EDIT</th>
+        <th>DELETE</th>
+    </thead>
+    <tbody>
+        {% for site in sites %}
+            {% include 'profile/partial/site/site_row.html' %}
+        {% endfor %}
+    </tbody>
+</table>
